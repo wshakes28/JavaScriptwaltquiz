@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+    
+</head>
+<body>
+    <div class="container">
+        <div class="yourscore">
+            Score: 
+        </div>
+
+        <div class="box split">
+
+            
+                <p>Finish out the code so that on the click of the button it will have a "color" value of black and a "background-color" value of green</p>
+                    <div class="split-vertical">
+                        <div class="box3">
+                            () =>  {                                        <br>
+                                greenButton.style.color = "";                <br>
+                                                                            <br>
+                            }                                               <br>
+                        
+                        </div>
+                        <div class="editcontainer"><button class="edit">Edit</button><button class="check">Check</button><button class="stopedit">Stop Edit</button></div>
+                        <button id="greenbutton">This Button</button>
+                        <div class="resultcontainer">
+                            <img id="wrongImg" src="https://media2.giphy.com/media/xlhuaAifdW5a4N527F/200w.webp?cid=ecf05e47gmbv3flhicyosh03eacgyjmhf20r9u2fh9o23anc&rid=200w.webp&ct=g" alt="" hidden>
+                            <img id="rightImg" src="https://media3.giphy.com/media/eoszP5cFlchhLIAv2t/giphy.webp?cid=ecf05e47kgyortuswa6hbfc5yjc69xee1c4idx1e8b7b760d&rid=giphy.webp&ct=g" alt="" hidden>
+                            <p class="result"></p>
+                            <p class="right-answer" hidden> A function is a block of code that performs an action or returns a value. Functions are custom code defined by programmers that are reusable, and can therefore make your programs more modular and efficient.</p>
+                        </div>
+                    </div>            
+
+
+
+
+
+            </div>
+           
+        </div>
+        
+    </div>
+    
+</body>
+<script  defer>
+    let correctAnswer = document.querySelector(".correct-answer")
+    let incorrectAnswer = document.querySelector(".incorrect-answer")
+    
+    
+    let check = document.querySelector(".check")
+    let result = document.querySelector(".result")
+    let rightImg = document.querySelector("#rightImg")
+    let wrongImg = document.querySelector("#wrongImg")
+    let rightAnswer = document.querySelector(".right-answer")
+    let yourScore = document.querySelector(".yourscore")
+    let score = 1
+    let box3 = document.querySelector(".box3")
+    let box3value = document.querySelector(".box3").value
+    let greenButton = document.querySelector("#greenbutton")
+    let edit = document.querySelector(".edit")
+    let stopEdit = document.querySelector(".stopedit")
+    let correctContent = '() =>  { greenButton.style.color = "black"; greenButton.style.backgroundColor = "green"; }'
+
+
+    
+
+    edit.addEventListener('click', e => {
+        box3.contentEditable = true
+        box3.focus();
+    })
+
+    stopEdit.addEventListener('click', e => {
+        box3.contentEditable = false
+    })
+
+    
+    
+    
+    yourScore.innerText =  yourScore.innerText + score
+    
+    function checkAnswers() {
+    
+        if(box3value == correctContent.value) {
+           result.innerText = "Correct!" 
+         rightImg.hidden = false
+         change()
+         
+         score = "Score: 3"
+
+         yourScore.innerText = score
+
+         
+        
+    
+        
+    
+        
+    
+         
+    
+         
+        } else  {
+            result.innerText = "Wrong!"
+         wrongImg.hidden = false
+         rightAnswer.hidden = false
+        }
+    }
+
+    let change = () =>  {
+        greenButton.style.color = "black"
+        greenButton.style.backgroundColor = "green"
+    }
+
+    greenButton.addEventListener('click', e => {
+        change()
+    })
+    
+    check.addEventListener('click', e => {
+        checkAnswers()
+    })
+    
+        </script>
+</html>

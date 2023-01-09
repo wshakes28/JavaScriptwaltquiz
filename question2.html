@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+    
+</head>
+<body>
+    <div class="container">
+        <div class="yourscore">
+            Score: 
+        </div>
+
+        <div class="box split">
+
+            <div>
+                <h2>In JavaScript a function is...</h2>
+                           <label> <input type="radio" name="" class="incorrect-answer" value="false">A property of an Array</label><br>
+                           <label> <input type="radio" name="" class="incorrect-answer" value="false">A class that changes the functionality of an element </label><br>
+                           <label> <input type="radio" name="" class="incorrect-answer" value="false">an equation </label><br>
+                           <label> <input type="radio" name="" class="correct-answer" value="true">a set of statements that performs a task or calculates a value </label>
+                <button class="check">Check</button>
+            </div>
+            <div>
+                <img id="wrongImg" src="https://media2.giphy.com/media/xlhuaAifdW5a4N527F/200w.webp?cid=ecf05e47gmbv3flhicyosh03eacgyjmhf20r9u2fh9o23anc&rid=200w.webp&ct=g" alt="" hidden>
+                <img id="rightImg" src="https://media3.giphy.com/media/eoszP5cFlchhLIAv2t/giphy.webp?cid=ecf05e47kgyortuswa6hbfc5yjc69xee1c4idx1e8b7b760d&rid=giphy.webp&ct=g" alt="" hidden>
+                <p class="result"></p>
+                <p class="right-answer" hidden> A function is a block of code that performs an action or returns a value. Functions are custom code defined by programmers that are reusable, and can therefore make your programs more modular and efficient.</p>
+                <a href="question3.html" class="next">Next Question</a>
+            </div>
+        </div>
+        
+    </div>
+    
+</body>
+<script  defer>
+    let correctAnswer = document.querySelector(".correct-answer")
+    let incorrectAnswer = document.querySelector(".incorrect-answer")
+    
+    
+    let check = document.querySelector(".check")
+    let result = document.querySelector(".result")
+    let rightImg = document.querySelector("#rightImg")
+    let wrongImg = document.querySelector("#wrongImg")
+    let rightAnswer = document.querySelector(".right-answer")
+    let yourScore = document.querySelector(".yourscore")
+    let score = 1
+    
+    
+    yourScore.innerText =  yourScore.innerText + score
+    
+    function checkAnswers() {
+    
+        if(correctAnswer.checked) {
+           result.innerText = "Correct!" 
+         rightImg.hidden = false
+         
+         score = "Score: 2"
+
+         yourScore.innerText = score
+
+         
+        
+    
+        
+    
+        
+    
+         
+    
+         
+        } else  {
+            result.innerText = "Wrong!"
+         wrongImg.hidden = false
+         rightAnswer.hidden = false
+        }
+    }
+    
+    check.addEventListener('click', e => {
+        checkAnswers()
+    })
+    
+        </script>
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+    
+</head>
+<body>
+    <div class="container">
+        <div class="yourscore">
+            Score: 
+        </div>
+        <div class="box split">
+
+            <div>
+                <h2>An object is a property of an array.</h2>
+                           <label> <input type="radio" name="" class="incorrect-answer" value="true">true </label>
+                           <label> <input type="radio" name="" class="correct-answer" value="false">false </label>
+                <button class="check">Check</button>
+            </div>
+            <div>
+                <img id="wrongImg" src="https://media4.giphy.com/media/9dgnO4jts7kmsFcSPq/200w.webp?cid=ecf05e47evwuby621vu2lpuevdxv3zjywb1d7wppkouqhubf&rid=200w.webp&ct=g" alt="" hidden>
+                <img id="rightImg" src="https://media0.giphy.com/media/QuTOdlwvMl5lHKbpRC/200w.webp?cid=ecf05e47akvqe6k10an4nptt0nmpyu8zkfyp7jjl291zqc8g&rid=200w.webp&ct=g" alt="" hidden>
+                <p class="result"></p>
+                <p class="right-answer" hidden> In JavaScript, an object is a standalone entity, with properties and type. Compare it with a cup, for example. A cup is an object, with properties. A cup has a color, a design, weight, a material it is made of, etc. The same way, JavaScript objects can have properties, which define their characteristics.</p>
+                <a href="question2.html" class="next">Next Question</a>
+            </div>
+        </div>
+        
+    </div>
+    
+</body>
+
+<script  defer>
+
+    let correctAnswer = document.querySelector(".correct-answer")
+    let incorrectAnswer = document.querySelector(".incorrect-answer")
+    
+    
+    let check = document.querySelector(".check")
+    let result = document.querySelector(".result")
+    let rightImg = document.querySelector("#rightImg")
+    let wrongImg = document.querySelector("#wrongImg")
+    let rightAnswer = document.querySelector(".right-answer")
+    let yourScore = document.querySelector(".yourscore")
+    let score = 0
+    
+    
+    
+    
+    function checkAnswers() {
+    
+        if(correctAnswer.checked) {
+           result.innerText = "Correct!" 
+         rightImg.hidden = false
+         
+         score++
+        
+    
+         yourScore.innerText = yourScore.innerText + score
+    
+         
+    
+         
+    
+         
+        } else  {
+            result.innerText = "Wrong!"
+         wrongImg.hidden = false
+         rightAnswer.hidden = false
+        }
+    }
+    
+    check.addEventListener('click', e => {
+        checkAnswers()
+      
+    })
+    
+    
+    
+    
+    
+    
+        </script>
+</html>
